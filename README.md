@@ -1,2 +1,0 @@
-# PruebaTecnicaPhp
- AppWeb, Script PHP

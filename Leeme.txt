@@ -1,0 +1,106 @@
+Hola, 
+
+Ejecucion de app
+
+*Ejecute el script startApp.php para iniciar la aplicacion
+	php .\startApp.php
+*Ejecutar 2da parte de la prueba
+	php .\parte2Script.php
+
+
+Base de datos se encuentra en la carpeta Prueba con todos los ficheros.
+
+
+Explicacion de lo realizado.
+
+Base de datos naveM.db
+Se creo una tabla nombre Resultados.
+con sus columnas id, name,model... url correspondientes al naves.CSV
+
+el id es autoincremental.
+los tipos de datos segun los que vi convenientes (int,text... etc).
+
+
+Para la realizacion de la primera parte, implemente el modelo-vista-controlador razones:
+	-Estructura y organizacion de codigo 
+	-Separacion de responsabilidades respecto al modelo y logica de la app.
+	-Aprendizaje continuo respecto a este patron. 
+	-Implementacion de buenas practicas y metodologia.
+
+Se Implementó un enrutador para la gestion y direcciones url.
+la App se divide asi:
+	index.php (enrutador)
+	main.php  (load csv)
+
+El main solo se cargara si la DB esta vacia. Mientras existan datos se visualizara la informacion de la DB.
+	viewCSv(visualizador de los datos en la DB) 
+Este implementa 3 funcionalidades
+
+Mostrar = Visualiza un div con span 					(view/viewDetailElements) 
+Eliminar= Manda un mensaje de confirmacion ante de eliminar
+Agregar = Carga el formulario addElements					(view/addElements) 
+	    los datos del formulario en este caso son requeridos c/u.
+	    y manda este lo almacena redirigiendo al controlador	(controller/c_addElements)
+
+el modelo tiene 2 ficheros:
+	*connectDB.php
+	*queries.php
+
+Para las consultas e Inserciones a la base de datos se utilizan consultas parametrizadas para mejorar la seguridad
+y prevenir inyecciones SQL.
+
+Esto implementado en modelo/queries. Funciones creadas:
+* inserCsv
+* getData
+* getElementById
+* deleteElement
+* addElements
+
+Para mejorar la seguridad se pudo implementar serealize() desde el servidor, y tambien implementar expresiones 
+regulares desde el cliente. 
+
+La implementacion de css es un modelo basico, que muestra la informacion de una manera "decente" por tiempo
+es algo que pude mejorar y verse mejor presentable. 
+
+Visualizacion. 
+Los datos se visualizan correctamente, Formateando las fechas-Hora, que sean facilmente leibles.
+
+**************************************************************************************************************************
+**************************************************************************************************************************
+**************************************************************************************************************************
+**************************************************************************************************************************
+Parte 2.
+
+Se creo un script en php.
+
+$limit=75
+$i=1
+$file
+$context
+
+Basicamente hice una funcion recursiva que recibe como parametro
+
+writeRecursive($i,$limit,$context,$file,$i);
+
+$index = indice actual.
+$limit = NUM_MAX a mostrar 
+$context = headers.
+$file = recurso del archivo creado/abierto.
+$counter = contador de elementos insertados en el csv.
+
+esto se detiene hasta que el contador>Limite.
+
+Se puede mejorar ya que no esta validado las inserciones, y datos repetidos.
+
+
+Gracias por su tiempo y saludos.
+
+
+
+
+
+
+
+
+
+
